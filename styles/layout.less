@@ -23,9 +23,6 @@ html, body, .content-wrapper {
     -webkit-overflow-scrolling: touch;
     position: relative;
 
-    > .github-link {
-      .hidden();
-    }
   }
 
   @media screen and (min-width: @side-menu-collapse-breakpoint) {
@@ -34,49 +31,15 @@ html, body, .content-wrapper {
     .top-bar {
       .hidden();
     }
-
-    .content > .github-link {
-      display: block;
-      visibility: visible;
-      position: absolute;
-      z-index: 999999;
-      top: 20px;
-      right: 20px;
-
-      > a {
-        color: #505d6b;
-
-        &:hover {
-          color: @red;
-        }
-      }
-    }
   }
 }
 
 .content {
   padding: 40px 40px 50px 40px;
 
-  .examples-header {
-    margin-top: 40px;
-  }
-
-  .examples-intro {
-    margin-bottom: 50px;
-  }
-
   @media screen and (min-width: @breakpoint-x-narrow) {
-    padding: 80px 60px 50px 60px;
+    padding: 40px 60px 50px 60px;
   }
-}
-
-div.top-loading-bar {
-  z-index: 9999999;
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 2px;
-  width: 100%;
 }
 
 section.row {

@@ -1,45 +1,3 @@
-function playLoop(bar, start = true) {
-  let interval;
-  let playing = false;
-
-  function animateBar() {
-    bar.animate(1, () => {
-      setTimeout(() => {
-        bar.animate(0)
-      }, 500);
-    });
-  }
-
-  function resume() {
-    if (playing) {
-      return;
-    }
-    playing = true;
-    interval = setInterval(() => {
-      bar.set(0)
-      animateBar();
-    }, 4000);
-
-    animateBar();
-  }
-
-  if (start) {
-    resume();
-  }
-
-  return {
-    pause: () => {
-      if (interval) {
-        bar.stop();
-        clearInterval(interval);
-      }
-
-      playing = false;
-    },
-    resume: resume
-  };
-}
-
 function removeClass(element, className) {
   var classes = element.className.split(' ');
 
@@ -94,7 +52,6 @@ function setStorageSafe(key, val) {
 }
 
 module.exports = {
-  playLoop,
   removeClass,
   addClass,
   hasClass,
